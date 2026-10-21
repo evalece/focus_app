@@ -1,13 +1,13 @@
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-// Convert "14:30" -> 870 minutes
+// Convert "14:30" to total minutes
 function toMinutes(time) {
   const [hours, minutes] = time.split(":").map(Number);
   return hours * 60 + minutes;
 }
 
-// Convert 870 minutes -> "14:30"
+// Convert total minutes to "14:30"
 function toTime(totalMinutes) {
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
@@ -15,7 +15,7 @@ function toTime(totalMinutes) {
   return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
 }
 
-// Current time, rounded up to the next minute
+// Current time rounded up to the next minute
 function getMinimumStart() {
   const now = new Date();
 
@@ -31,6 +31,8 @@ export default function TimerControls({
   onSettingsChange,
   isRunning,
   isComplete,
+  isExpanded,
+  onToggleExpand,
   onStart,
   onPause,
   onReset,
@@ -43,23 +45,20 @@ export default function TimerControls({
     scheduledStart,
   } = settings;
 
-  // UI state: whether settings are visible
-  const [isExpanded, setIsExpanded] = useState(true);
-
-  // Store drag position without triggering re-renders
+  // Temporary pointer position for dragging
   const dragRef = useRef(null);
 
   function changeSetting(name, value) {
     onSettingsChange({ [name]: value });
   }
 
-  // Ensure scheduled start cannot be earlier than now
+  // Do not allow a scheduled start earlier than now
   function changeStartTime(value) {
     if (!value) return;
 
     const minimum = getMinimumStart();
 
-    // No valid whole-minute time remains today
+    // No valid whole-minute start time remains today
     if (minimum > 1439) return;
 
     const selected = toMinutes(value);
@@ -80,8 +79,7 @@ export default function TimerControls({
     }
   }
 
-  // Drag upward -> later time
-  // Drag downward -> earlier time
+  // Drag up to increase time, down to decrease
   function handlePointerDown(e) {
     if (isRunning || isComplete) return;
 
@@ -98,7 +96,7 @@ export default function TimerControls({
 
     const { startY, startMinutes } = dragRef.current;
 
-    // Every 10 pixels changes time by 5 minutes
+    // Every 10 pixels adjusts the time by 5 minutes
     const steps = Math.trunc((startY - e.clientY) / 10);
     const adjustment = steps * 5;
 
@@ -118,25 +116,24 @@ export default function TimerControls({
     dragRef.current = null;
   }
 
-  // Start automatically collapses the settings panel
+  // Parent handles automatic collapse on Start
   function handleStartPause() {
     if (isRunning) {
       onPause();
     } else {
-      setIsExpanded(false);
       onStart();
     }
   }
 
   return (
     <div className="timer-settings">
-      {/* Collapsible header */}
+      {/* Collapsible settings header */}
       <button
         type="button"
         className="settings-toggle"
         aria-expanded={isExpanded}
         aria-controls="timer-settings-content"
-        onClick={() => setIsExpanded(prev => !prev)}
+        onClick={onToggleExpand}
       >
         <span>Timer Settings</span>
 
@@ -145,10 +142,9 @@ export default function TimerControls({
         </span>
       </button>
 
-      {/* Collapsible settings content */}
+      {/* Settings content */}
       {isExpanded && (
         <div id="timer-settings-content">
-
           {/* Focus duration */}
           <div className="setting">
             <label>Focus duration (min)</label>
@@ -240,7 +236,7 @@ export default function TimerControls({
               id="scheduled-start"
               type="time"
               value={scheduledStart}
-              disabled={isRunning}
+              disabled={isRunning || isComplete}
               onChange={(e) => changeStartTime(e.target.value)}
             />
 
@@ -291,7 +287,7 @@ export default function TimerControls({
 
             <button
               type="button"
-              disabled={isRunning}
+              disabled={isRunning || isComplete}
               onClick={setStartToNow}
             >
               Now
@@ -300,7 +296,7 @@ export default function TimerControls({
         </div>
       )}
 
-      {/* Timer actions remain visible when collapsed */}
+      {/* Always visible timer controls */}
       <div className="timer-controls">
         <button
           type="button"

@@ -24,9 +24,10 @@ input {
 ============================== */
 
 .app {
-  max-width: 1000px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 24px;
   text-align: center;
 }
 
@@ -230,8 +231,9 @@ button:disabled {
   .timer-controls {
     flex-wrap: wrap;
   }
+}
 
-
+/* Draggable time input */
 .draggable-time {
   cursor: ns-resize;
   touch-action: none;
@@ -241,5 +243,207 @@ button:disabled {
 .draggable-time input {
   cursor: ns-resize;
 }
+
+
+/* Collapsible timer settings */
+
+.settings-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 10px 4px;
+
+  background: transparent;
+  border: none;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #625c6c;
+
+  cursor: pointer;
+}
+
+.settings-toggle:hover {
+  color: #4d9a84;
+}
+
+.settings-toggle:focus-visible {
+  outline: 2px solid #4d9a84;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.settings-chevron {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+#timer-settings-content {
+  padding-top: 12px;
+}
+
+
+/* =====================================
+   Pomodoro Layout Modes
+===================================== */
+
+.pomodoro {
+  width: 100%;
+  min-height: 75vh;
+}
+
+.pomodoro-layout {
+  display: grid;
+  gap: 16px;
+  transition: gap 0.25s ease;
+}
+
+/* =====================================
+   Expanded: centered configuration
+===================================== */
+
+.pomodoro--expanded .pomodoro-layout {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "settings"
+    "clock"
+    "timeline";
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pomodoro-settings-area {
+  grid-area: settings;
+  min-width: 0;
+}
+
+.pomodoro-clock-area {
+  grid-area: clock;
+  min-width: 0;
+}
+
+.pomodoro-timeline-area {
+  grid-area: timeline;
+  min-width: 0;
+}
+
+.pomodoro-scene-area {
+  grid-area: scene;
+  min-width: 0;
+}
+
+.pomodoro--expanded .pomodoro-scene-area {
+  display: none;
+}
+
+/* =====================================
+   Focus: controls at top
+===================================== */
+
+.pomodoro--focus .pomodoro-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "settings clock"
+    "timeline timeline"
+    "scene scene";
+  align-items: start;
+  width: 100%;
+  max-width: none;
+}
+
+.pomodoro--focus .pomodoro-settings-area {
+  justify-self: start;
+  width: 100%;
+  max-width: 360px;
+}
+
+.pomodoro--focus .pomodoro-clock-area {
+  justify-self: end;
+  width: 100%;
+  max-width: 260px;
+}
+
+.pomodoro--focus .pomodoro-timeline-area {
+  width: 100%;
+}
+
+.pomodoro--focus .pomodoro-scene-area {
+  min-height: 55vh;
+  display: block;
+}
+
+/* Compact controls in focus mode */
+
+.pomodoro--focus .timer-settings {
+  max-width: none;
+  margin: 0;
+  padding: 12px 16px;
+}
+
+.pomodoro--focus .timer-display {
+  margin: 0;
+  text-align: right;
+}
+
+.pomodoro--focus .timer-display h1 {
+  font-size: 2.5rem;
+  margin: 4px 0;
+}
+
+.pomodoro--focus .timer-display h3 {
+  margin: 4px 0;
+}
+
+.pomodoro--focus .timer-controls {
+  margin-top: 10px;
+  gap: 6px;
+}
+
+.pomodoro--focus .timer-controls button {
+  padding: 7px 10px;
+  font-size: 0.85rem;
+}
+
+.pomodoro--focus .session-schedule {
+  max-width: none;
+  margin: 0;
+}
+
+.pomodoro--focus .timeline {
+  margin: 12px auto;
+}
+
+/* =====================================
+   Mobile responsive
+===================================== */
+
+@media (max-width: 600px) {
+  .pomodoro--focus .pomodoro-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "clock"
+      "settings"
+      "timeline"
+      "scene";
+  }
+
+  .pomodoro--focus .pomodoro-settings-area,
+  .pomodoro--focus .pomodoro-clock-area {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .pomodoro--focus .timer-display {
+    text-align: center;
+  }
+
+  .pomodoro--focus .pomodoro-scene-area {
+    min-height: 45vh;
+  }
+}
+
+
 
 }
