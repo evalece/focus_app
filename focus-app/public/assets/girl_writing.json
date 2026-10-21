@@ -1,0 +1,185 @@
+{
+  "frames": {
+    "writing_00.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_01.png": {
+      "frame": {
+        "x": 222,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_02.png": {
+      "frame": {
+        "x": 444,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_03.png": {
+      "frame": {
+        "x": 666,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_04.png": {
+      "frame": {
+        "x": 888,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_05.png": {
+      "frame": {
+        "x": 1110,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_06.png": {
+      "frame": {
+        "x": 1332,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    },
+    "writing_07.png": {
+      "frame": {
+        "x": 1554,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 222,
+        "h": 232
+      }
+    }
+  },
+  "animations": {
+    "writing": [
+      "writing_00.png",
+      "writing_01.png",
+      "writing_02.png",
+      "writing_03.png",
+      "writing_04.png",
+      "writing_05.png",
+      "writing_06.png",
+      "writing_07.png"
+    ]
+  },
+  "meta": {
+    "image": "girl_writing.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1776,
+      "h": 232
+    },
+    "scale": "1"
+  }
+}
