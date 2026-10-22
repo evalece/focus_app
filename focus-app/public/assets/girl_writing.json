@@ -4,160 +4,160 @@
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_01.png": {
       "frame": {
-        "x": 222,
+        "x": 272,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_02.png": {
       "frame": {
-        "x": 444,
+        "x": 544,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_03.png": {
       "frame": {
-        "x": 666,
+        "x": 816,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_04.png": {
       "frame": {
-        "x": 888,
+        "x": 1088,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_05.png": {
       "frame": {
-        "x": 1110,
+        "x": 1360,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_06.png": {
       "frame": {
-        "x": 1332,
+        "x": 1632,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     },
     "writing_07.png": {
       "frame": {
-        "x": 1554,
+        "x": 1904,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       },
       "sourceSize": {
-        "w": 222,
-        "h": 232
+        "w": 272,
+        "h": 392
       }
     }
   },
@@ -177,8 +177,8 @@
     "image": "girl_writing.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1776,
-      "h": 232
+      "w": 2176,
+      "h": 392
     },
     "scale": "1"
   }
