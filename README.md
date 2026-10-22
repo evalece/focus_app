@@ -1,5 +1,5 @@
 # 🐚 Focus App
-![focus app screenshot] (https://github.com/evalece/focus_app/blob/main/img/sample.png)
+![focus app screenshot](https://github.com/evalece/focus_app/blob/main/img/sample.png)
 
 ## Concept ##
 **A cozy, interactive productivity companion that makes focused study sessions more enjoyable.**
